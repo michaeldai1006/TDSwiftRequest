@@ -58,4 +58,36 @@ class TDSwiftRequest {
             }
         }.resume()
     }
+    
+    static func getRequestErrorMessage(error: Error, response: URLResponse?) -> String {
+        // TDSwiftRequestError
+        if let error = error as? TDSwiftRequestError {
+            switch error {
+            case .urlInvalid:
+                return "Request URL invalid"
+            case .bodyInvalid:
+                return "Request body invalid"
+            case .statusCodeInvalid:
+                return "Response code invalid"
+            case .responseInvalid:
+                return "Response invalid"
+            case .parsingResponseFailed:
+                return "Parsing response failed"
+            }
+        }
+        
+        // URLError
+        if let error = error as? URLError {
+            if error.code == URLError.Code.notConnectedToInternet {
+                return "No internet connection"
+            } else if error.code == URLError.Code.timedOut {
+                return "Request timed out"
+            } else if error.code == URLError.Code.cannotConnectToHost {
+                return "Could not connect to the server"
+            }
+        }
+        
+        // Unable to handle error
+        return "Unknown error"
+    }
 }
