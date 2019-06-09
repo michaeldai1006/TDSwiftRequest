@@ -36,14 +36,13 @@ class TDSwiftRequest {
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode >= 400 {
                     if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-                        completion?(json, response, TDSwiftRequestError.statusCodeInvalid(statusCode: httpResponse.statusCode))
+                        completion?(json, response, TDSwiftRequestError.statusCodeInvalid(statusCode: httpResponse.statusCode)); return
                     } else {
-                        completion?(nil, response, TDSwiftRequestError.statusCodeInvalid(statusCode: httpResponse.statusCode))
+                        completion?(nil, response, TDSwiftRequestError.statusCodeInvalid(statusCode: httpResponse.statusCode)); return
                     }
                 }
             } else {
-                completion?(nil, nil, TDSwiftRequestError.responseInvalid)
-                return
+                completion?(nil, nil, TDSwiftRequestError.responseInvalid); return
             }
             
             // JSONSerialization
