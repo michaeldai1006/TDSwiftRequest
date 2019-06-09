@@ -12,6 +12,8 @@
 		06240B2022AC5C8D006FEC6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06240B1E22AC5C8D006FEC6E /* Main.storyboard */; };
 		06240B2222AC5C8F006FEC6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06240B2122AC5C8F006FEC6E /* Assets.xcassets */; };
 		06240B2522AC5C8F006FEC6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06240B2322AC5C8F006FEC6E /* LaunchScreen.storyboard */; };
+		06240B2E22AC5D6F006FEC6E /* TDSwiftRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06240B2D22AC5D6F006FEC6E /* TDSwiftRequestError.swift */; };
+		06240B3022AC5E9D006FEC6E /* TDSwiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06240B2F22AC5E9D006FEC6E /* TDSwiftRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		06240B2122AC5C8F006FEC6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06240B2422AC5C8F006FEC6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06240B2622AC5C8F006FEC6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06240B2D22AC5D6F006FEC6E /* TDSwiftRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDSwiftRequestError.swift; sourceTree = "<group>"; };
+		06240B2F22AC5E9D006FEC6E /* TDSwiftRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDSwiftRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,22 @@
 		06240B1922AC5C8D006FEC6E /* TDSwiftRequest */ = {
 			isa = PBXGroup;
 			children = (
+				06240B2C22AC5D2E006FEC6E /* TDSwiftRequest */,
 				06240B1A22AC5C8D006FEC6E /* AppDelegate.swift */,
 				06240B1C22AC5C8D006FEC6E /* ViewController.swift */,
 				06240B1E22AC5C8D006FEC6E /* Main.storyboard */,
 				06240B2122AC5C8F006FEC6E /* Assets.xcassets */,
 				06240B2322AC5C8F006FEC6E /* LaunchScreen.storyboard */,
 				06240B2622AC5C8F006FEC6E /* Info.plist */,
+			);
+			path = TDSwiftRequest;
+			sourceTree = "<group>";
+		};
+		06240B2C22AC5D2E006FEC6E /* TDSwiftRequest */ = {
+			isa = PBXGroup;
+			children = (
+				06240B2D22AC5D6F006FEC6E /* TDSwiftRequestError.swift */,
+				06240B2F22AC5E9D006FEC6E /* TDSwiftRequest.swift */,
 			);
 			path = TDSwiftRequest;
 			sourceTree = "<group>";
@@ -135,6 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06240B2E22AC5D6F006FEC6E /* TDSwiftRequestError.swift in Sources */,
+				06240B3022AC5E9D006FEC6E /* TDSwiftRequest.swift in Sources */,
 				06240B1D22AC5C8D006FEC6E /* ViewController.swift in Sources */,
 				06240B1B22AC5C8D006FEC6E /* AppDelegate.swift in Sources */,
 			);
