@@ -13,7 +13,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 // Handle error
                 if let error = error {
-                    self.responseTextView.text = TDSwiftRequest.getRequestErrorMessage(error: error, response: response)
+                    self.responseTextView.text = TDSwiftRequest.getErrorMessage(error: error, response: response)
                     return
                 }
                 

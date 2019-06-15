@@ -58,7 +58,7 @@ class TDSwiftRequest {
         }.resume()
     }
     
-    static func getRequestErrorMessage(error: Error, response: URLResponse?) -> String {
+    static func getErrorMessage(error: Error, response: URLResponse?) -> String {
         // TDSwiftRequestError
         if let error = error as? TDSwiftRequestError {
             switch error {
@@ -67,7 +67,7 @@ class TDSwiftRequest {
             case .bodyInvalid:
                 return "Request body invalid"
             case .statusCodeInvalid:
-                return "Response code invalid"
+                return "Response code invalid: \(error.getStatusCode() ?? -1))"
             case .responseInvalid:
                 return "Response invalid"
             case .parsingResponseFailed:
