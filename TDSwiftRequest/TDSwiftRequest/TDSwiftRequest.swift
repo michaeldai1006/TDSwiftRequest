@@ -1,7 +1,7 @@
 import Foundation
 
 class TDSwiftRequest {
-    static func request(urlString: String, method: String, body: [String: Any]?, headers: [String: String]?, timeOut: Double?, completion: (([String: Any]?, URLResponse?, Error?) -> Void)?) {
+    static func request(urlString: String, method: String, body: [String: Any]?, headers: [String: String]?, timeOutInS: Double?, completion: (([String: Any]?, URLResponse?, Error?) -> Void)?) {
         // Parse url string
         guard let url = URL(string: urlString) else { completion?(nil, nil, TDSwiftRequestError.urlInvalid); return }
         
@@ -24,7 +24,7 @@ class TDSwiftRequest {
         
         // URLSession, timeout
         let sessionConfig = URLSessionConfiguration.default
-        if let timeOut = timeOut { sessionConfig.timeoutIntervalForRequest = timeOut }
+        if let timeOutInS = timeOutInS { sessionConfig.timeoutIntervalForRequest = timeOutInS }
         let urlSession = URLSession(configuration: sessionConfig)
         
         // Make request
