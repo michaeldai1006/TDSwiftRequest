@@ -58,7 +58,7 @@ class TDSwiftRequest {
         }.resume()
     }
     
-    static func getErrorMessage(error: Error, response: URLResponse?) -> String {
+    static func parseErrorMessage(error: Error, response: URLResponse?) -> String {
         // TDSwiftRequestError
         if let error = error as? TDSwiftRequestError {
             switch error {
@@ -82,11 +82,11 @@ class TDSwiftRequest {
             } else if error.code == URLError.Code.timedOut {
                 return "Request timed out"
             } else if error.code == URLError.Code.cannotConnectToHost {
-                return "Could not connect to the server"
+                return "Could not connect to server"
             }
         }
         
-        // Unable to handle error
-        return "Unknown error"
+        // Unknown error
+        return "Unknown request error"
     }
 }
