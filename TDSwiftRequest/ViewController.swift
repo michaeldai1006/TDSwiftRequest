@@ -9,7 +9,7 @@ class ViewController: UIViewController {
         // Update text view
         responseTextView.text = "Requesting..."
         
-        TDSwiftRequest.request(urlString: "http://localhost:3000", method: "DELETE", body: ["name": [["a": 1], ["b": ["c": 3]]]], headers: ["key": "dhalckjclha"], timeOutInS: 3) { (data, response, error) in
+        TDSwiftRequest.request(urlString: "http://localhost:3000", method: "DELETE", query: ["a": "1", "b": 2], body: ["name": [["a": 1], ["b": ["c": 3]]]], headers: ["key": "dhalckjclha"], timeOutInS: 3) { (data, response, error) in
             DispatchQueue.main.async {
                 // Handle error
                 if let error = error {

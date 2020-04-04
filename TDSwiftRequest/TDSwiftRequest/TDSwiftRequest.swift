@@ -1,9 +1,19 @@
 import Foundation
 
 class TDSwiftRequest {
-    static func request(urlString: String, method: String, body: [String: Any]?, headers: [String: String]?, timeOutInS: Double?, completion: (([String: Any]?, URLResponse?, Error?) -> Void)?) {
+    static func request(urlString: String, method: String, query: [String: Any]?, body: [String: Any]?, headers: [String: String]?, timeOutInS: Double?, completion: (([String: Any]?, URLResponse?, Error?) -> Void)?) {
+        // Compose query string
+        var queryString = ""
+        if let query = query {
+            queryString += "?"
+            for (key, value) in query {
+                if queryString.count > 1 { queryString += "&" }
+                queryString += "\(key)=\(value)"
+            }
+        }
+        
         // Parse url string
-        guard let url = URL(string: urlString) else { completion?(nil, nil, TDSwiftRequestError.urlInvalid); return }
+        guard let url = URL(string: urlString + queryString) else { completion?(nil, nil, TDSwiftRequestError.urlInvalid); return }
         
         // URLRequest object
         var request = URLRequest(url: url)
