@@ -68,7 +68,7 @@ class TDSwiftRequest {
         }.resume()
     }
     
-    static func parseErrorMessage(error: Error, response: URLResponse?) -> String {
+    static func parseErrorMessage(error: Error) -> String {
         // TDSwiftRequestError
         if let error = error as? TDSwiftRequestError {
             switch error {
